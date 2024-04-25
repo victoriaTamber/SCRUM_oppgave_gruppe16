@@ -9,20 +9,30 @@
 <body>
 
     <form id="lan" class="link">Arrange Lan
-        <input id="lanInput" class="hidden" type="text" placeholder="host">
+        <input required id="lanInput" class="hidden" type="text" placeholder="host">
         <input id="lanSubmit" class="hidden" type="submit" value="lan">
     </form>
     <form id="Tournament" class="link">Tournament
-        <input id="TournamentInput" class="hidden" type="text" placeholder="code">
+        <input required id="TournamentInput" class="hidden" type="text" placeholder="code">
         <input id="TournamentSubmit" class="hidden" type="submit" value="Tournament">
     </form>
     <br>
-    <form id="join" class="link">JOIN
-        <input id="joinInput" class="hidden" type="text" placeholder="code">
-        <input id="joinSubmit" class="hidden" type="submit" value="join">
-    </form>
+    <div id="join" class="link">JOIN
+        <form class="registrationForm hidden" >
+
+            <label for="code">code:</label>
+            <input required type="text" id="code">
+            <label for="username">username:</label>
+            <input required type="text" id="username">
+            <label for="number">Phone number:</label>
+            <input required type="number" id="number">
+            <label for="email">Email:</label>
+            <input required type="email" id="email">
+            <input type="submit" value="register">
+        </form>
+    </div>
     <form id="view" class="link">VIEW
-        <input id="viewInput" class="hidden" type="text" placeholder="host">
+        <input required id="viewInput" class="hidden" type="text" placeholder="host">
         <input id="viewSubmit" class="hidden" type="submit" value="VIEW">
     </form>
 </body>

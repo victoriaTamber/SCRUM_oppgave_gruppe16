@@ -49,11 +49,12 @@ app.post("/createLan", function (req, res) {
 });
 app.post("/register", function (req, res) {
     // skaffer user og passord fra data-en og gir dem en verdi
+    let code = req.body.code
     let username = req.body.username
     let number = req.body.number
     let email = req.body.email
     console.log(username, number, email);
-    connection.query(`INSERT INTO user (username, phone, email) VALUES ("${username}", "${number}", "${email}")`)
+    connection.query(`INSERT INTO user (username, phone, email, lobby) VALUES ("${username}", "${number}", "${email}", "${code}")`)
 });
 
 

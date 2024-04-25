@@ -1,7 +1,10 @@
 body{
     height: 200vh;
     display: flex;
-
+    
+}
+#body{
+    flex-direction: column;
 }
 .hidden{
     display: none;
@@ -18,8 +21,3 @@ body{
 .link > input[type="text"]{
     width: 10vw;
 }
-
-body{
-   background-color: red;
-}
-

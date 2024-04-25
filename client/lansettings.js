@@ -1,4 +1,5 @@
 async function games(){
+    
     let res = await fetch("find/game/" + sessionStorage.getItem("name"), {
         method: "GET"
     })
@@ -6,6 +7,7 @@ async function games(){
     console.log(game);
     document.getElementById("code").innerHTML = game[0].lobbyCode    
     sessionStorage.setItem("code", game[0].lobbyCode)
+    loadPlayers()
 }
 
 async function loadPlayers(){
@@ -29,5 +31,3 @@ async function loadPlayers(){
 }
 
 games()
-
-loadPlayers()
