@@ -1,0 +1,25 @@
+body{
+    height: 200vh;
+    display: flex;
+
+}
+.hidden{
+    display: none;
+}
+.link{
+    cursor: pointer;
+    background-color: lightblue;
+    border-radius: 2vw;
+    width: 40%;
+    padding: 2vw;
+    margin: 2rem;
+}
+
+.link > input[type="text"]{
+    width: 10vw;
+}
+
+body{
+   background-color: red;
+}
+

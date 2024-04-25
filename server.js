@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Server is running on this port: ${PORT}`));
 const mysql = require('mysql2');
+const md5 = require('md5')
 // test databasen
 const connection = mysql.createConnection({
     host: '127.0.0.1',
@@ -24,6 +25,28 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + "/client/index.html"))
 })
 
+app.get('/find/game/:a', (req, res) => {
+    connection.query(`SELECT * FROM lobbies WHERE host = "${req.params.a}" `, function (err, result, fields) {
+        let data = JSON.parse(JSON.stringify(result))
+        res.send(data)
+    })
+});
+
+app.get('/find/user/:a', (req, res) => {
+    let string = `SELECT * FROM user WHERE lobby = "${req.params.a}" `
+    connection.query(string, function (err, result, fields) {
+        let data = JSON.parse(JSON.stringify(result))
+        res.send(data)
+    })
+});
+app.post("/createLan", function (req, res) {
+    // skaffer user og passord fra data-en og gir dem en verdi
+    let username = req.body.name
+    let currentdate = new Date()
+    let date = currentdate.getTime() + "/" + currentdate.getDate() + "/"  + currentdate.getMonth()
+    let code = md5(date)
+    connection.query(`INSERT INTO lobbies (lobbyCode, type, host) VALUES ('${code}', "lan", "${username}")`)
+});
 app.post("/register", function (req, res) {
     // skaffer user og passord fra data-en og gir dem en verdi
     let username = req.body.username

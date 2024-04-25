@@ -1,26 +1,30 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <form class="registrationForm">
-        <label for="username">username:</label>
-        <input type="text" id="username">
-        <label for="number">Phone number:</label>
-        <input type="number" id="number">
-        <label for="email">Email:</label>
-        <input type="email" id="email">
-        <input type="submit" value="register">
+
+    <form id="lan" class="link">Arrange Lan
+        <input id="lanInput" class="hidden" type="text" placeholder="host">
+        <input id="lanSubmit" class="hidden" type="submit" value="lan">
     </form>
-    <a href="https://cdn.splashdamage.com/downloads/games/wet/WolfET_2_60b_custom.exe" download="">Download Windows</a>
-    <a href="https://cdn.splashdamage.com/downloads/games/wet/et260b.x86_full.zip" download="">Download Linux</a>
+    <form id="Tournament" class="link">Tournament
+        <input id="TournamentInput" class="hidden" type="text" placeholder="code">
+        <input id="TournamentSubmit" class="hidden" type="submit" value="Tournament">
+    </form>
+    <br>
+    <form id="join" class="link">JOIN
+        <input id="joinInput" class="hidden" type="text" placeholder="code">
+        <input id="joinSubmit" class="hidden" type="submit" value="join">
+    </form>
+    <form id="view" class="link">VIEW
+        <input id="viewInput" class="hidden" type="text" placeholder="host">
+        <input id="viewSubmit" class="hidden" type="submit" value="VIEW">
+    </form>
 </body>
-<script src="script.js"></script>
+<script src="create.js"></script>
 </html>
